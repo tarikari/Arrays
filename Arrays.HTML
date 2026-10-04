@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fruits</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1 class="text-center">Fruit Basket</h1>
+            <div class="card mt-5 shadow">
+                <div class="card-body">
+                    <h4>My Item Cart</h4>
+                    <p id="King">No Items Added</p>
+                    <button class="btn btn-warning" onclick="name2()">Checkout</button>
+                    <hr>
+                    <h4>Checkout Process</h4>
+                    <div class="alert alert-danger"><p id="Queen">Processing</p></div>
+                <h4>Order Confirmation</h4>
+                <div id="Jack" class="alert alert-success">
+                    <p>Waiting for Checkout</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <script>
+            var name1=["Oranges","Tangerines","Avacado","Strawberry","Apples","Banana"];
+            document.getElementById("King").innerHTML=name1.join(", ");
+            function name2(){
+                document.getElementById("Queen").innerHTML="Processing";
+                name3();
+            }
+            function name3(){
+                document.getElementById("Queen").innerHTML="Order Received <br>↓<br> Waiting for Payments <br>↓<br> Checkout Successful";
+                name4();
+            }
+            function name4(){
+                document.getElementById("Queen").innerHTML="Order Received <br>↓<br> Waiting for Payments <br>↓<br> Checkout Successful";
+                document.getElementById("Jack").innerHTML="Payment Successful <br>"+"Cart Contains "+name1.join(", ");
+            }
+        </script>
+    </body>
+</html>
